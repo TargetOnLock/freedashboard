@@ -1,0 +1,43 @@
+/* src/App.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212; /* Dark grey almost black */
+  color: white; /* Text color */
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full height of the viewport */
+}
+
+.dashboard-container {
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  text-align: center; /* Center text */
+  margin: 20px; /* Add some margin */
+}
+
+h2 {
+  margin: 10px 0; /* Margin for headings */
+}
+
+button {
+  background-color: #007BFF; /* Blue color */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 25px; /* Rounded corners */
+  padding: 10px 20px; /* Padding for button */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
