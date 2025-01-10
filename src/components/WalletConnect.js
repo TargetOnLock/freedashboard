@@ -29,10 +29,25 @@ const WalletConnect = ({ setAddress }) => {
         }
     };
 
+    const disconnectWallet = async () => {
+        const web3Modal = new Web3Modal();
+        await web3Modal.clearCachedProvider();
+        setProvider(null);
+        setSigner(null);
+        setAddressState('');
+        setAddress('');
+    };
+
     return (
         <div>
-            <button onClick={connectWallet}>Connect Wallet</button>
-            {address && <p>Connected as: {address}</p>}
+            {address ? (
+                <div>
+                    <button onClick={disconnectWallet}>Disconnect</button>
+                    <p>Connected Wallet: ...{address.slice(-4)}</p>
+                </div>
+            ) : (
+                <button onClick={connectWallet}>Connect Wallet</button>
+            )}
         </div>
     );
 };

@@ -13,6 +13,8 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh; /* Full height of the viewport */
+  padding: 20px; /* Add some padding for mobile */
+  box-sizing: border-box; /* Ensure padding is included in height */
 }
 
 .dashboard-container {
@@ -36,8 +38,22 @@ button {
   font-size: 16px; /* Font size */
   cursor: pointer; /* Pointer cursor on hover */
   transition: background-color 0.3s; /* Smooth transition */
+  width: 100%; /* Make button full width on mobile */
+  max-width: 300px; /* Limit max width for larger screens */
 }
 
 button:hover {
   background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+  button {
+    font-size: 14px; /* Smaller font size on mobile */
+    padding: 10px; /* Adjust padding for mobile */
+  }
+
+  h2 {
+    font-size: 18px; /* Adjust heading size for mobile */
+  }
 }
