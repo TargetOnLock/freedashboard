@@ -1,6 +1,7 @@
 // src/components/Dashboard.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import WalletConnect from './WalletConnect';
 import Rewards from './Rewards';
 import { formatCurrency } from '../utils/formatCurrency';
 
@@ -55,15 +56,6 @@ const Dashboard = ({ address }) => {
         return earnings;
     };
 
-    const handleClaimRewards = () => {
-        if (userEarnings <= 0) {
-            alert("You have no rewards to claim.");
-        } else {
-            alert(`You have claimed ${formatCurrency(userEarnings)} in rewards!`);
-            setUserEarnings(0);
-        }
-    };
-
     return (
         <div className="dashboard-container">
             <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="Logo" style={{ width: '500px', marginBottom: '20px' }} />
@@ -72,7 +64,7 @@ const Dashboard = ({ address }) => {
             <h2>Wrapped BTC Price: {formatCurrency(btcPrice)}</h2>
             <h2>Total Rewards Distributed: {formatCurrency(rewardsDistributed)}</h2>
             <h2>Your Earnings: {formatCurrency(userEarnings)}</h2>
-            <button onClick={handleClaimRewards}>Claim Rewards</button>
+            <WalletConnect />
             <Rewards />
         </div>
     );
